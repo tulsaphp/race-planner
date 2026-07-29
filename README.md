@@ -1,75 +1,161 @@
-# React + TypeScript + Vite
+# 🏊 Triathlon Planner
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application for planning triathlon races, tracking workouts, and viewing pacing information.
 
-Currently, two official plugins are available:
+Built with **React**, **TypeScript**, **Vite**, **Vitest**, and **Docker**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🏁 Add and manage triathlon races
+- 🏊 Track swimming, cycling, and running workouts
+- 📊 Automatic pacing calculations
+- 💾 Local Storage persistence
+- 🗑️ Delete races and workouts
+- ✅ Unit tests with Vitest and React Testing Library
+- 🐳 Docker support for production deployment
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- React 19
+- TypeScript
+- Vite
+- Vitest
+- React Testing Library
+- Local Storage API
+- Docker
+- Nginx
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📂 Project Structure
 
+```text
+src/
+├── components/
+│   ├── RaceForm.tsx
+│   ├── WorkoutForm.tsx
+│   ├── PacingStrip.tsx
+├── App.tsx
+├── storage.ts
+├── types.ts
+└── main.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚙️ Installation
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Clone the repository:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/race-planner.git
+```
+
+Go to the project folder:
+
+```bash
+cd race-planner
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+---
+
+## ▶️ Run the Application
+
+```bash
+npm run dev
+```
+
+Open:
 
 ```
+http://localhost:5173
+```
+
+---
+
+## 🧪 Run Tests
+
+```bash
+npm test
+```
+
+---
+
+## 🏗️ Build Production Version
+
+```bash
+npm run build
+```
+
+---
+
+## 🐳 Docker
+
+Build the Docker image:
+
+```bash
+docker build -t race-planner .
+```
+
+Run the container:
+
+```bash
+docker run -d -p 8080:80 race-planner
+```
+
+Open:
+
+```
+http://localhost:8080
+```
+
+---
+
+## 📸 Screenshots
+
+Add screenshots here.
+
+Example:
+
+```
+screenshots/home.png
+screenshots/races.png
+screenshots/workouts.png
+```
+
+---
+
+## 🎯 Future Improvements
+
+- Edit existing races
+- Edit workouts
+- Search and filter
+- Charts and analytics
+- User authentication
+- Cloud database
+- Responsive mobile design
+
+---
+
+## 👩‍💻 Author
+
+**Tulsa Vadera**
+
+GitHub:
+https://github.com/YOUR_USERNAME
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.

@@ -149,10 +149,10 @@ screenshots/workouts.png
 
 ## 👩‍💻 Author
 
-**Tulsa Vadera**
+**Tulsa gangdev**
 
 GitHub:
-https://github.com/YOUR_USERNAME
+https://github.com/tulsaphp 
 
 ---
 

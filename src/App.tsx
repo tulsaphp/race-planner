@@ -1,9 +1,8 @@
 import { useState } from "react";
 import RaceForm from "./components/RaceForm";
-import type { Race } from "./types";
+import type { Race, WorkoutEntry } from "./types";
 import { loadRaces, saveRaces } from "./storage";
 import WorkoutForm from "./components/WorkoutForm";
-import type { WorkoutEntry } from "./types";
 import { loadWorkouts, saveWorkouts } from "./storage";
 // Inline calculateAverageDuration to avoid missing module './utils'
 const calculateAverageDuration = (
@@ -64,20 +63,27 @@ const averageRun = calculateAverageDuration(workouts, "run");
       ))}
       <WorkoutForm onAddWorkout={addWorkout} />
       <hr />
-    <ul>
-  {workouts.map((workout) => (
-    <li key={workout.id}>
-      {workout.date} - {workout.discipline} - {workout.duration} min
+<h2>Saved Workouts</h2>
 
-      <button
-        onClick={() => deleteWorkout(workout.id)}
-        style={{ marginLeft: "10px" }}
-      >
-        Delete
-      </button>
-    </li>
-  ))}
-</ul>
+{workouts.length === 0 ? (
+  <p>No workouts yet.</p>
+) : (
+  <ul>
+    {workouts.map((workout) => (
+      <li key={workout.id}>
+        {workout.date} - {workout.discipline} - {workout.duration} min
+
+        <button
+          onClick={() => deleteWorkout(workout.id)}
+          style={{ marginLeft: "10px" }}
+        >
+          Delete
+        </button>
+      </li>
+    ))}
+  </ul>
+)}
+
       <h2>Saved Races</h2>
       {races.length === 0 ? (
         <p>No races added yet.</p>

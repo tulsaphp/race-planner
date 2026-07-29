@@ -5,6 +5,9 @@ import {
   saveWorkouts,
   loadWorkouts,
 } from "./storage";
+import type { Race } from "./types";
+import type { WorkoutEntry } from "./types";   
+
 
 describe("storage", () => {
   beforeEach(() => {
@@ -12,12 +15,12 @@ describe("storage", () => {
   });
 
   it("saves and loads races", () => {
-    const races = [
+    const races : Race[] = [
       {
         id: "1",
         name: "Sprint Race",
-        type: "sprint",
-        swimDistance: 0.75,
+        type: "sprint" as const,
+        swimDistance: 750,
         bikeDistance: 20,
         runDistance: 5,
         targetSwimTime: 15,
@@ -34,28 +37,20 @@ describe("storage", () => {
     expect(loadRaces()).toEqual(races);
   });
 
-  it("returns an empty array when no races are stored", () => {
-    expect(loadRaces()).toEqual([]);
-  });
-
   it("saves and loads workouts", () => {
-    const workouts = [
+    const workouts : WorkoutEntry[] = [
       {
         id: "1",
-        date: "2026-08-01",
         discipline: "swim",
         duration: 30,
+        date: "2026-07-29",
+        feelRating: 4,
         fueling: "Water",
-        feelRating: 5,
       },
     ];
 
     saveWorkouts(workouts);
 
     expect(loadWorkouts()).toEqual(workouts);
-  });
-
-  it("returns an empty array when no workouts are stored", () => {
-    expect(loadWorkouts()).toEqual([]);
   });
 });

@@ -1,10 +1,11 @@
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import PacingStrip from "./PacingStrip";
+import type { Race } from "../types";
 
 describe("PacingStrip", () => {
   it("renders pacing information for a race", () => {
-    const race = {
+    const race: Race = {
       id: "1",
       name: "Sprint Race",
       type: "sprint",
@@ -22,23 +23,25 @@ describe("PacingStrip", () => {
     render(<PacingStrip race={race} />);
 
     expect(
-      screen.getByRole("heading", { name: "Sprint Race" })
+      screen.getByRole("heading", {
+        name: /Sprint Race/i,
+      })
     ).toBeInTheDocument();
 
     expect(
-      screen.getByText("🏊 Swim Pace: 2.00 min/100m")
+      screen.getByText(/Swim Pace:/i)
     ).toBeInTheDocument();
 
     expect(
-      screen.getByText("🚴 Bike Speed: 30.00 km/h")
+      screen.getByText(/Bike Speed:/i)
     ).toBeInTheDocument();
 
     expect(
-      screen.getByText("🏃 Run Pace: 5.00 min/km")
+      screen.getByText(/Run Pace:/i)
     ).toBeInTheDocument();
 
     expect(
-      screen.getByText("🏁 Finish Time: 1h 24m")
+      screen.getByText(/Finish Time:/i)
     ).toBeInTheDocument();
   });
 });

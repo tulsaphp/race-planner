@@ -1,47 +1,45 @@
-import { describe, it, expect, beforeEach } from "vitest";
-import {
-  saveRaces,
-  loadRaces,
-  saveWorkouts,
-  loadWorkouts,
-} from "./storage";
+import { describe, it, expectTypeOf } from "vitest";
+import type { Race, WorkoutEntry, PacingStrip } from "./types";
 
-describe("storage", () => {
-  beforeEach(() => {
-    localStorage.clear();
+describe("types", () => {
+  it("defines the Race type", () => {
+    expectTypeOf<Race>().toMatchTypeOf<{
+      id: string;
+      name: string;
+      type: "sprint" | "olympic";
+      swimDistance: number;
+      bikeDistance: number;
+      runDistance: number;
+      targetSwimTime: number;
+      targetT1Time: number;
+      targetBikeTime: number;
+      targetT2Time: number;
+      targetRunTime: number;
+      date: string;
+    }>();
   });
 
-  it("saves and loads races", () => {
-    const races = [
-      {
-        id: "1",
-        name: "Ironman",
-        type: "Ironman",
-        date: "2026-08-01",
-        distance: 226,
-        targetFinishTime: 720,
-      },
-    ];
-
-    saveRaces(races);
-
-    expect(loadRaces()).toEqual(races);
+  it("defines the WorkoutEntry type", () => {
+    expectTypeOf<WorkoutEntry>().toMatchTypeOf<{
+      id: string;
+      date: string;
+      discipline: "swim" | "bike" | "run";
+      duration: number;
+      fueling: string;
+      feelRating: number;
+    }>();
   });
 
-  it("saves and loads workouts", () => {
-    const workouts = [
-      {
-        id: "1",
-        discipline: "swim",
-        duration: 30,
-        date: "2026-07-29",
-        feelRating: 4,
-        fueling: "Water",
-      },
-    ];
-
-    saveWorkouts(workouts);
-
-    expect(loadWorkouts()).toEqual(workouts);
+  it("defines the PacingStrip type", () => {
+    expectTypeOf<PacingStrip>().toMatchTypeOf<{
+      raceId: string;
+      raceName: string;
+      swimPacePerHundred: number;
+      t1Time: number;
+      bikeSpeedKph: number;
+      t2Time: number;
+      runPacePerKm: number;
+      totalFinishTime: string;
+    }>();
   });
 });

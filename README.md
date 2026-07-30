@@ -52,7 +52,7 @@ src/
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/race-planner.git
+git clone https://github.com/tulsaphp/race-planner.git
 ```
 
 Go to the project folder:

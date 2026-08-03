@@ -129,10 +129,9 @@ Add screenshots here.
 Example:
 
 ```
-screenshots/home.png
-screenshots/races.png
-screenshots/workouts.png
-```
+
+```<img width="1080" height="2340" alt="Screenshot_20260803_085101_Chrome" src="https://github.com/user-attachments/assets/3c75ee05-a933-467c-aa89-cac8d6e6c80c" />
+
 
 ---
 

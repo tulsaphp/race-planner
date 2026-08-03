@@ -121,15 +121,13 @@ http://localhost:8080
 ```
 
 ---
+Live Demo:
+
+https://tulsaphp.github.io/race-planner/
+
 ## 📸 Screenshots
 
 ![Home](Screenshot_20260803_085101_Chrome.jpg)
-## 📸 Screenshots
-
-screenshots here.
-
-
-https://github.com/tulsaphp/race-planner/blob/2c4e9aa44b8f423a67de6c429462a2c0d143c2b3/Screenshot_20260803_085101_Chrome.jpg
 
 ---
 

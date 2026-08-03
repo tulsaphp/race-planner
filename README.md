@@ -121,7 +121,9 @@ http://localhost:8080
 ```
 
 ---
+## 📸 Screenshots
 
+![Home](screenshots/)Screenshot_20260803_085101_Chrome.jpg
 ## 📸 Screenshots
 
 screenshots here.

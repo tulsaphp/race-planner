@@ -4,6 +4,7 @@ A modern web application for planning triathlon races, tracking workouts, and vi
 
 Built with **React**, **TypeScript**, **Vite**, **Vitest**, and **Docker**.
 
+https://tulsaphp.github.io/race-planner/
 ---
 
 ## 🚀 Features

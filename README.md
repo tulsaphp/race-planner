@@ -124,14 +124,10 @@ http://localhost:8080
 
 ## 📸 Screenshots
 
-Add screenshots here.
+screenshots here.
 
-Example:
 
-```
-
-```<img width="1080" height="2340" alt="Screenshot_20260803_085101_Chrome" src="https://github.com/user-attachments/assets/3c75ee05-a933-467c-aa89-cac8d6e6c80c" />
-
+https://github.com/tulsaphp/race-planner/blob/2c4e9aa44b8f423a67de6c429462a2c0d143c2b3/Screenshot_20260803_085101_Chrome.jpg
 
 ---
 
